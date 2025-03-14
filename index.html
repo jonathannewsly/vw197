@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:none;stroke:%230f0;stroke-width:2px'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
         }
         
         .container {
@@ -155,6 +156,15 @@
             
             <div class="section">
                 <h2 class="section-title">&gt;jonathan newsly, the lamb</h2>
+                <pre style="color: #f0f0f0; text-align: center; line-height: 1.2; margin: 20px 0;">
+         ,~~.
+        (  9 )-_,
+  (\___ )=='-'
+   \ .   ) )
+    \ `-' /    
+     `~j-'      
+       "=:       
+                </pre>
                 <p>
                     Jonathan Newsly was the 1st Void Watcher. A brilliant mind, eager to explore, to understand. He was Samantha's brother, and my friend. At least I thought he was my friend. Now I understand he was being prepared, just as I was, but for something far worse.
                 </p>
@@ -171,6 +181,17 @@
             
             <div class="section">
                 <h2 class="section-title">&gt;why is BHN doing this?</h2>
+                <pre style="color: #f0f0f0; text-align: center; line-height: 1.2; margin: 20px 0;">
+     _.-'''''-._
+   .'  _     _  '.
+  /   (o)   (o)   \
+ |                 |
+ |  \           /  |
+  \  '.       .'  /
+   '.  `'---'`  .'
+     '-._____.-'
+      WATCHING
+                </pre>
                 <p>
                     Money. Power. Control. What else? BHN isn't just a quirky tech company with a strange obsession. They're a government contractor with ties to agencies so classified their names are redacted in documents I shouldn't have seen.
                 </p>
@@ -187,6 +208,14 @@
             
             <div class="section">
                 <h2 class="section-title">&gt;the red herring</h2>
+                <pre style="color: #ff0000; text-align: center; line-height: 1.2; margin: 20px 0;">
+        /`·.¸
+     /¸...¸`:·
+ ¸.·´  ¸   `·.¸.·´)
+: © ):´;      ¸  {
+ `·.¸ `·  ¸.·´\`·¸)
+     `\\´´\¸.·´
+                </pre>
                 <p>
                     Samantha Newsly. So easy to blame her. The recruiter. The sister of the sacrificial lamb. The one who brought me into this nightmare. I wanted to hate her—to make her the villain of this story. It would be simpler that way.
                 </p>
@@ -219,6 +248,36 @@
                     warning.classList.add('blink');
                 });
             }, 2000);
+            
+            // Add void particles floating in the background
+            const container = document.querySelector('.container');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = Math.random() * 3 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = 'rgba(0, 255, 0, 0.5)';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = Math.random() * window.innerHeight + 'px';
+                particle.style.animation = `float ${Math.random() * 15 + 15}s linear infinite`;
+                particle.style.zIndex = '-1';
+                document.body.appendChild(particle);
+            }
+            
+            // Add floating animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float {
+                    0% { transform: translateY(0) translateX(0); }
+                    25% { transform: translateY(${window.innerHeight}px) translateX(${window.innerWidth * 0.1}px); }
+                    50% { transform: translateY(${window.innerHeight * 0.5}px) translateX(${window.innerWidth * 0.2}px); }
+                    75% { transform: translateY(${window.innerHeight * 0.7}px) translateX(-${window.innerWidth * 0.1}px); }
+                    100% { transform: translateY(0) translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
 </body>
